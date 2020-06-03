@@ -18,13 +18,13 @@
                     <tr>
                         <td  align="justify">{{ date('d-M-y', strtotime($order->date_created)) }}</td>
                         <td  align="justify">{{ $order->items_total }}</td>
-                        <td  align="justify">${{ $order->subtotal_inc_tax }}</td>
+                        <td  align="justify">${{ number_format((float) $order->subtotal_inc_tax, 2) }}</td>
                     </tr>
                     @endif
                 @endforeach
             <tr>
                 <td colspan="2">Lifetime Value</td>
-                <td style="font-weight: bold;">${{ $lifeTimeValue }}</td>
+                <td style="font-weight: bold;">${{ number_format((float) $lifeTimeValue, 2) }}</td>
             </tr>
         </tbody>
     </table>
